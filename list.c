@@ -71,9 +71,10 @@ void * prevList(List * list) {
 void pushFront(List * list, void * data) {
   Node* nuevo = createNode(data);
   if(!list->head){
+    list->current = list->head;
     list->head = nuevo;
     list->tail = nuevo;
-    list->current = nuevo;
+    nuevo->next = list->current;
   }
 }
 
