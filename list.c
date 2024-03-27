@@ -32,7 +32,6 @@ List * createList() {
   List* lista = (List*) malloc(sizeof(List));
   lista->head = NULL;
   lista->tail = NULL;
-  lista->current = NULL;
   return lista;
 }
 /*La primera retorna el dato del primer nodo de la lista (`head`) y actualiza el current para que apunte a ese nodo. */
@@ -51,7 +50,6 @@ void * nextList(List * list) {
     return NULL;
   list->current = list->current->next;
   return list->current->data;
-  
 }
 
 void * lastList(List * list) {
